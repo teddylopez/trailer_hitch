@@ -1,0 +1,11 @@
+{
+  "name": "trailer_hitch",
+  "private": true,
+  "dependencies": {
+    "@rails/webpacker": "3.5",
+    "jquery": "^3.5.1"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "2.11.2"
+  }
+}

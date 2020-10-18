@@ -1,0 +1,32 @@
+<h2>Trailer Hitch</h2>
+
+<% if @posts.any? %>
+  <form id="price-form" class="autosubmit">
+    <label for="price">Show me listings under:</label>
+    <select id="price" name="price" class="autosubmit">
+      <option disabled hidden selected>$$$$$</option>
+      <option value="500000">$500,000</option>
+      <option value="150000">$150,000</option>
+      <option value="75000">$75,000</option>
+      <option value="50000">$50,000</option>
+      <option value="40000">$40,000</option>
+      <option value="30000">$30,000</option>
+      <option value="20000">$20,000</option>
+      <option value="15000">$15,000</option>
+      <option value="10000">$10,000</option>
+      <option value="5000">$5,000</option>
+    </select>
+  </form>
+
+  <br>
+
+  <h3><%= @posts.length %> listings under $<%= number_with_delimiter(@price, :delimiter => ',') %></h3>
+
+  <div class="list">
+    <% @posts.each do |vehicle| %>
+      <%= render "card", vehicle: vehicle %><br>
+    <% end %>
+  </div>
+<% else %>
+  <h3>No Listings in the next 12 hours</h3>
+<% end %>

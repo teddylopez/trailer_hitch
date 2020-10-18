@@ -1,0 +1,11 @@
+<%= link_to "https://trailerhitch.herokuapp.com/", target: :_blank do %>
+  <h3>
+    There are <%= @posts.length %> listings under $20,000 that end soon!
+  </h3>
+<% end %>
+
+<div class="list" style="margin:0 auto; column-width:500px;">
+  <% @posts.each do |vehicle| %>
+    <%= render "card", vehicle: vehicle %><br>
+  <% end %>
+</div>
