@@ -2,7 +2,7 @@
   <div style="float:right"></div>
   <h3><%= vehicle[:vehicle] %></h3>
   Current Bid: $<%= number_with_delimiter(vehicle[:current_bid], :delimiter => ',') %> <br>
-  Ends in: <span class="countdown" data-date-of-close="<%= vehicle[:date_of_close] %>" data-time-of-close="<%= vehicle[:time_of_close] %>"> </span>
+  Ends in: <span class="countdown" data-timestamp="<%= vehicle[:timestamp] %>"> </span>
   <%= link_to vehicle[:listing_url], target: :_blank do %>
     <%= image_tag("#{vehicle[:photo]}")%>
   <% end %>

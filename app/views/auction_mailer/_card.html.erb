@@ -1,8 +1,8 @@
 <div class="vehicle-card" style="margin:5px 0; padding:10px; border:1px solid gray; display:inline-block; text-transform:uppercase;">
   <h3><%= vehicle[:vehicle] %></h3>
   CURRENT BID: $<%= number_with_delimiter(vehicle[:current_bid], :delimiter => ',') %> <br>
-  CLOSES: <span class="countdown" data-date-of-close="<%= vehicle[:date_of_close] %>" data-time-of-close="<%= vehicle[:time_of_close] %>"><%= vehicle[:time_of_close] %> </span> <br>
-  <%= link_to vehicle[:url], target: :_blank do %>
+  CLOSES: <span class="countdown" style="color:red;"><%= vehicle[:time_of_close] %> </span> <br>
+  <%= link_to vehicle[:listing_url], target: :_blank do %>
     <%= image_tag("#{vehicle[:photo]}", :style => 'width: 100%;')%>
   <% end %>
 </div>

@@ -29,7 +29,7 @@ function updateCountDowns() {
 
     // Set the date we're counting down to:
     var countDownDate = new Date(
-      $span[0].dataset["dateOfClose"] + " " + $span[0].dataset["timeOfClose"]
+      $span[0].dataset["timestamp"] * 1000
     ).getTime();
 
     // Update the count down every 1 second
@@ -48,8 +48,8 @@ function updateCountDowns() {
       var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      // Display the result in the element with id="demo"
-      $span.text(days + "d " + hours + "h " + minutes + "m " + seconds + "s ");
+      // Display the result
+      $span.text(hours + "h " + minutes + "m " + seconds + "s ");
 
       // If the count down is finished, write some text
       if (distance < 0) {
