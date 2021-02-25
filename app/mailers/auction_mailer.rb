@@ -3,7 +3,7 @@ class AuctionMailer < ApplicationMailer
   def upcoming_auctions
     url = "https://bringatrailer.com/auctions/"
     unparsed_page = HTTParty.get(url)
-    parsed_page ||= Nokogiri::HTML(unparsed_page)
+    parsed_page ||= Nokogiri::HTML(unparsed_page.body)
 
     auction_postings = parsed_page.css("div.auctions-item-container")
     @posts = []
