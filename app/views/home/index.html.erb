@@ -1,22 +1,13 @@
 <h2>Trailer Hitch</h2>
 
 <% if @posts.any? %>
-  <form id="price-form" class="autosubmit">
-    <label for="price">Show me listings under:</label>
-    <select id="price" name="price" class="autosubmit">
-      <option disabled hidden selected>$$$$$</option>
-      <option value="500000">$500,000</option>
-      <option value="150000">$150,000</option>
-      <option value="75000">$75,000</option>
-      <option value="50000">$50,000</option>
-      <option value="40000">$40,000</option>
-      <option value="30000">$30,000</option>
-      <option value="20000">$20,000</option>
-      <option value="15000">$15,000</option>
-      <option value="10000">$10,000</option>
-      <option value="5000">$5,000</option>
-    </select>
-  </form>
+
+  <%= form_tag("/", :method => "get", class: "autosubmit") do %>
+    <div class="form-group form-dropdown">
+      <%= label_tag "price" %>
+      <%= select_tag :price, options_for_select(PRICE_POINTS, @price) %>
+    </div>
+  <% end %>
 
   <br>
 

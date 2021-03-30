@@ -38,10 +38,6 @@ class HomeController < ApplicationController
   private
 
   def set_price
-    if params[:price]
-      @price = params[:price]
-    else
-      @price = 20000
-    end
+    @price = params[:price] ? params[:price] : 20000
   end
 end

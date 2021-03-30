@@ -72,12 +72,7 @@ function styleNoReserve() {
 }
 
 function autoSubmit() {
-  $("#price-form").on("change", ".autosubmit", function (e) {
+  $("form.autosubmit :input").change(function () {
     $(this).closest("form").submit();
   });
-
-  // Update dropdown with selected value after page refresh:
-  var urlParams = new URLSearchParams(window.location.search);
-  var price = urlParams.get("price");
-  $("option[value='" + price + "']").attr("selected", true);
 }

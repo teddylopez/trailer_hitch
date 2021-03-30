@@ -6,7 +6,6 @@ ruby '2.4.2'
 gem "httparty"
 gem "nokogiri"
 gem 'jquery-rails'
-gem "webpacker", "~> 3"
 gem 'figaro'
 gem 'sendgrid-ruby'
 
